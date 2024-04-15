@@ -1,0 +1,13 @@
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactInfo {
+  margin: 0px;
+}
+
+.deleteButton {
+  height: 30px;
+}
