@@ -1,8 +1,8 @@
 import { useState,useEffect } from 'react'
 import './App.css'
-import ContactForm from './Components/ContactForm/ContactForm'
-import ContactsList from './Components/ContactsList/ContactsList'
-import SearchBox from './Components/SearchBox/SearchBox'
+import ContactForm from './components/ContactForm/ContactForm'
+import ContactsList from './components/ContactsList/ContactsList'
+import SearchBox from './components/SearchBox/SearchBox'
 
 const contactsList = [
   {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},

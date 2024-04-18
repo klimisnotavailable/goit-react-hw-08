@@ -1,4 +1,4 @@
-import css from "../Contact/Contact.module.css"
+import css from "./Contact.module.css"
 
 export default function Contact({contact,onDelete}) {
     const { name, number, id } = contact;

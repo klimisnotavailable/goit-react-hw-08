@@ -1,5 +1,5 @@
 import Contact from "../Contact/Contact"
-import css from "../ContactsList/ContactsList.module.css"
+import css from "./ContactsList.module.css"
 import { nanoid } from 'nanoid'
 
 
