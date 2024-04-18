@@ -1,9 +1,11 @@
 import Contact from "../Contact/Contact"
 import css from "../ContactsList/ContactsList.module.css"
+import { nanoid } from 'nanoid'
 
-export default function ContactsList(data) {
-    const contacts = data.data.map((contact) => {
-        return <li key={contact.id} className={css.contactItem}><Contact contact={contact}></Contact></li>
+
+export default function ContactsList({data, onDelete}) {
+    const contacts = data.map((contact) => {
+        return <li key={nanoid()} className={css.contactItem}><Contact contact={contact} onDelete={onDelete}></Contact></li>
     })
     return <ul>{contacts }</ul>
 }
