@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react'
 import './App.css'
-import ContactForm from './components/ContactForm/ContactForm'
+import ContactForm from "./components/ContactForm/ContactForm"
 import ContactsList from './components/ContactsList/ContactsList'
 import SearchBox from './components/SearchBox/SearchBox'
 
@@ -10,7 +10,7 @@ const contactsList = [
   {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
   {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
 ]
-// contactsList
+
 function App() {
   const [nameToSearch, setNameToSearch] = useState("");
   const [contacts, setContacts] = useState(() => {

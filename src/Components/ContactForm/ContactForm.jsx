@@ -3,9 +3,6 @@ import { useId } from "react"
 import * as Yup from "yup";
 import css from "./ContactForm.module.css"
 
-
-
-
 export default function ContactForm({onAdd}) {
     const nameId = useId();
     const telId = useId();
