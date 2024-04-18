@@ -1,8 +1,8 @@
-import { useState,useEffect } from 'react'
-import './App.css'
-import ContactForm from './components/ContactForm/ContactForm'
-import ContactsList from './components/ContactsList/ContactsList'
-import SearchBox from './components/SearchBox/SearchBox'
+import { useState, useEffect } from 'react';
+import './App.css';
+import ContactsList from './components/ContactsList/ContactsList';
+import SearchBox from './components/SearchBox/SearchBox';
+import ContactForm from './components/ContactForm/ContactForm';
 
 const contactsList = [
   {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
@@ -14,7 +14,7 @@ const contactsList = [
 function App() {
 
   const [nameToSearch, setNameToSearch] = useState("");
-  
+
   const [contacts, setContacts] = useState(() => {
   const savedContacts = JSON.parse(localStorage.getItem("contacts"))
 
