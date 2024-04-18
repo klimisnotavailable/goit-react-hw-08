@@ -1,6 +1,7 @@
 import { Formik, Form, Field ,ErrorMessage } from "formik"
 import { useId } from "react"
 import * as Yup from "yup";
+import css from "../ContactForm/ContactForm.module.css"
 
 
 
@@ -30,16 +31,16 @@ export default function ContactForm({onAdd}) {
         validationSchema={validationSchema}
     >
         
-        <Form>
-            <div>
+        <Form className={css.contactForm}>
+            <div className={css.formField}>
                 <label htmlFor={nameId}>Name</label>
                 <Field name="name" id={nameId} />
-                <ErrorMessage name="name" component="span" />
+                <ErrorMessage className={css.error} name="name" component="span" />
             </div>
-            <div>
+            <div className={css.formField}>
                 <label htmlFor={telId}>Phone</label>
                 <Field name="number" id={telId} />
-                <ErrorMessage name="number" component="span"/>
+                <ErrorMessage className={css.error} name="number" component="span"/>
             </div>
 
             <button type="submit">Submit</button>
