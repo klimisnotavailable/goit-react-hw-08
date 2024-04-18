@@ -4,6 +4,7 @@ import './App.css';
 import ContactsList from './components/ContactsList/ContactsList'
 import ContactForm from './components/ContactForm/ContactForm';
 import SearchBox from './components/SearchBox/SearchBox';
+import { nanoid } from 'nanoid'
 
 const contactsList = [
   {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
@@ -17,26 +18,27 @@ function App() {
   const [nameToSearch, setNameToSearch] = useState("");
 
   const [contacts, setContacts] = useState(() => {
-  const savedContacts = JSON.parse(localStorage.getItem("contacts"))
+    const savedContacts = JSON.parse(localStorage.getItem("contacts"))
 
-    if (savedContacts !== 0) {
-      return savedContacts
+    if (savedContacts.length !== 0) {
+      return savedContacts;
     }
 
-    return contactsList
+    return contactsList;
   });
-  
+
   const addContact = (newContact) => {
-    newContact.id = Date.now()
     setContacts((prevContacts) => {
-      return [...prevContacts, newContact]
-    });
-  }
+        newContact.id = nanoid()
+        return [...prevContacts, newContact]
+      });
+  };
 
   const deleteContact = (id) => {
     setContacts((prevContacts) => {
       return prevContacts.filter(contact => contact.id !== id)
-    })}
+    })
+  };
 
   const filteredContacts = contacts.filter(contact => {
     return contact.name.toLowerCase().includes(nameToSearch.toLowerCase().trim())
@@ -48,11 +50,7 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("contacts", JSON.stringify(contacts))
-    
-    return () => {
-      
-    }
-  },[contacts])
+  }, [contacts]);
 
   return (
     <>
@@ -61,7 +59,7 @@ function App() {
       <SearchBox handleChange={handleChange}></SearchBox>
       <ContactsList data={filteredContacts} onDelete={deleteContact}></ContactsList>
     </>
-  )
+  );
 }
 
 export default App
