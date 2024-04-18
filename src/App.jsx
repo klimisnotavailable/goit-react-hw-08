@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react'
 import './App.css'
-import ContactForm from "./components/ContactForm/ContactForm"
+import ContactForm from './components/ContactForm/ContactForm'
 import ContactsList from './components/ContactsList/ContactsList'
 import SearchBox from './components/SearchBox/SearchBox'
 
@@ -12,9 +12,11 @@ const contactsList = [
 ]
 
 function App() {
+
   const [nameToSearch, setNameToSearch] = useState("");
+  
   const [contacts, setContacts] = useState(() => {
-    const savedContacts = JSON.parse(localStorage.getItem("contacts"))
+  const savedContacts = JSON.parse(localStorage.getItem("contacts"))
 
     if (savedContacts !== 0) {
       return savedContacts
