@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
-import ContactsList from './components/ContactsList/ContactsList'
+import ContactsList from './components/ContactList/ContactList'
 import ContactForm from './components/ContactForm/ContactForm';
 import SearchBox from './components/SearchBox/SearchBox';
 import { nanoid } from 'nanoid'
@@ -24,7 +24,7 @@ function App() {
       return savedContacts;
     }
 
-    return contactsList;
+    return  contactsList;
   });
 
   const addContact = (newContact) => {
