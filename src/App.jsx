@@ -20,11 +20,11 @@ function App() {
   const [contacts, setContacts] = useState(() => {
     const savedContacts = JSON.parse(localStorage.getItem("contacts"))
 
-    if (savedContacts.length !== 0) {
+    if (savedContacts !== null) {
       return savedContacts;
     }
 
-    return  contactsList;
+    return contactsList;
   });
 
   const addContact = (newContact) => {
