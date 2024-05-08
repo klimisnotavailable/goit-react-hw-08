@@ -24,11 +24,8 @@ const slice = createSlice({
             }
         },
 
-        deleteContact:
-        {
-            reducer: (state, action) => {
-                state.contacts.items.filter(contact => contact.id !== action.payload);
-            }
+        deleteContact: (state, action) => {
+               state.contacts.items = state.contacts.items.filter(contact => contact.id !== action.payload);
         }
     }
     

@@ -9,7 +9,6 @@ export default function Contact({contact}) {
         <div className={css.contactContainer}>
             <span><p className={css.contactInfo}>{name}</p></span>
             <span><p className={css.contactInfo}>{number }</p></span>
-            <span>{id}</span>
         </div>
         <button className={css.deleteButton} onClick={()=>{dispatch(deleteContact(id));}}>Delete</button>
     </>
