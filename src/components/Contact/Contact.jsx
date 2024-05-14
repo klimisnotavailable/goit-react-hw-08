@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { deleteContact } from "../../redux/contactsOps";
 
 export default function Contact({ contact }) {   
-    // console.log("contact")
     const {name,number,id} = contact;
     const dispatch = useDispatch();
     return <>
