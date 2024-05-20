@@ -1,20 +1,28 @@
-import { nanoid } from "@reduxjs/toolkit"
-import { Form,Formik,Field } from "formik"
+import { nanoid } from "@reduxjs/toolkit";
+import { Form,Formik,Field } from "formik";
+import { login } from "../../redux/auth/operations";
+import { useDispatch } from "react-redux";
 
 export default function LoginForm() {
     const idForEmail = nanoid();
     const idForPassword = nanoid();
+    const dispatch = useDispatch();
 
     const initialValues = {
-        login: '',
         email: '',
         password: '',
     };
+
+    const handleSubmit = (values,actions) =>{
+        dispatch(login(values));
+        actions.resetForm();
+    }
 
     return <>
         <div>
         <Formik
             initialValues={initialValues}
+            onSubmit={handleSubmit}
         >
             <Form>
                 <label htmlFor={idForEmail}>

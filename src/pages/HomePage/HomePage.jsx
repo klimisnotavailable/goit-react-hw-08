@@ -1,16 +1,6 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { register } from "../../redux/auth/operations";
-
-
+import { useSelector } from "react-redux";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
 function HomePage() {
-
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(register());
-    }, [dispatch]);
-    
     return <>
         <section>
             <h1>Hello</h1>
